@@ -11,7 +11,7 @@ module Addbooks
         File.open("bookdata.txt","a") do |file|
             file.write("\n")
             file.write($bookdata)
-            p " data added successfuly"
+            p " data added successfully"
             Library.lib
         end
     end
