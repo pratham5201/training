@@ -3,7 +3,14 @@ EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
 DOB_REGEX = /\d{4}-(0[1-9]|1[0-2])-/
 
 module Resume
+
     def res
+        print "Starting"
+        for i in 0..120
+            print ">"
+            sleep(0.005)
+        end
+
         inputList = [
             "Father Name",
             "Gender [M/F]",
@@ -20,13 +27,12 @@ module Resume
         ]
         print "please enter your name :"
         name=gets.chomp
-        file = File.new("resume/#{name}.txt","w")
+        file = File.new( "resume#{name}.txt" , "w" )
         for item in inputList
             while(item=="Email")
                 print "Enter your #{item} :"
                 value=gets.chomp
-                if value =~ EMAIL_REGEX                              
-                    puts "Enter your #{item} :"
+                if value =~ EMAIL_REGEX
                     fdata=item+ " : " + value
                     file.puts(fdata)
                     break
@@ -63,6 +69,12 @@ module Resume
                 file.puts(fdata)
             end
         end
+        print "building your resume"
+        for i in 0..108
+            print ">"
+            sleep(0.005)
+        end
+        print "done...."
     end
 end
 include Resume
